@@ -1,6 +1,6 @@
 {
   "name": "bizubee-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Run bizubee in a node environment",
   "main": "./src/index.js",
   "bin": {

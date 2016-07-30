@@ -3,7 +3,10 @@ import {a, b} from ./module
 import {a as abz, b as bbz} from ./module.bz
 import {a as am, b as bam, c as cam} from ./mod
 
-console.log(a, b)
-console.log(abz, bbz)
-console.log(am + bam ^ cam)
+(() -> ~ {
+    console.log(a, b)
+    console.log(abz, bbz)
+    console.log(am + bam ^ cam + await Promise.resolve(5))
+})()
+
 

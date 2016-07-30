@@ -6,7 +6,8 @@ const fs                = require('fs');
 const path              = require('path');
 
 const extension = 'bz';
-    
+const utilsPath = 'bizubee utils';
+
 function createContext(absPath) {
 	const context = {};
 	for (var key in global) {
@@ -27,10 +28,20 @@ function bizubeeResolver(options = {}) {
     return {
         // importee and importer are both paths
         resolveId(importee, importer = null) {
-            return defaultResolver.resolveId(importee, importer);
+            if (importee === utilsPath)
+                return importee;
+            else 
+                return defaultResolver.resolveId(importee, importer);
         },
         // id is an absolute path
         load(id) {
+            if (id === utilsPath) {
+                const utilPath = `${__dirname}/utils.js`;
+                const source = fs.readFileSync(utilPath, 'utf8');
+                
+                return {source};
+            }
+            
             if (id.endsWith(`.${extension}`)) {
                 const source    = fs.readFileSync(id, 'utf8');
                 const context   = createContext(id);
