@@ -1,0 +1,34 @@
+{
+  "name": "bizubee-node",
+  "version": "0.0.1",
+  "description": "Run bizubee in a node environment",
+  "main": "index.js",
+  "bin": {
+    "bizubee-node": "./bin/run.js"
+  },
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizubee/bizubee-node.git"
+  },
+  "keywords": [
+    "bizubee",
+    "node",
+    "tangler",
+    "es6",
+    "async"
+  ],
+  "author": "Gabriel Ratener",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bizubee/bizubee-node/issues"
+  },
+  "homepage": "https://github.com/bizubee/bizubee-node#readme",
+  "dependencies": {
+    "bizubee": "^0.2.3",
+    "bizubee-compiler": "^1.0.3",
+    "tangler": "0.0.2"
+  }
+}
